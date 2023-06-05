@@ -1,8 +1,39 @@
-import React from 'react'
+import React from 'react';
 
-const FilerPicker = () => {
+import CustomButton from './CustomButton';
+
+const FilerPicker = ({ file, setFile, readFile }) => {
     return (
-        <div>FilerPicker</div>
+        <div className='filepicker-container'>
+            <div className='flex-1 flex flex-col'>
+                <input
+                    id='file-upload'
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => setFile(e.target.files[0])}
+                />
+                <label htmlFor='file-upload' className='filepicker-label text-green-500'>
+                    Inserir imagem
+                </label>
+                <p className='mt-2 text-grey500 text-xs truncate ml-2'>
+                    {file === '' ? "Sem imagem" : file.name}
+                </p>
+            </div>
+            <div className='mt-4 flex flex-wrap gap-3'>
+                <CustomButton
+                    type="outline"
+                    title="Logo"
+                    handleClick={()=>readFile('logo')}
+                    customStyles='text-xs'
+                />
+                <CustomButton 
+                    type='filled'
+                    title='full'
+                    handleClick={()=>{readFile('full')}}
+                    customStyles='text-xs'
+                />
+            </div>
+        </div>
     )
 }
 
