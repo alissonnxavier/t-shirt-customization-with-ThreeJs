@@ -29,7 +29,7 @@ const Home = () => {
                     <motion.div className="home-content" {...headContainerAnimation}>
                         <motion.div {...headTextAnimation}>
                             <h1 className="head-text">
-                                LET'S <br className="xl:block hidden" /> DO IT.
+                                VAMOS <br className="xl:block hidden" /> CRIAR.
                             </h1>
                         </motion.div>
                         <motion.div
@@ -37,14 +37,14 @@ const Home = () => {
                             className="flex flex-col gap-5"
                         >
                             <p className="max-w-md font-normal text-green-500 text-base">
-                                Create your unique and exclusive shirt with our brand-new customization tool.
-                                <strong>Uleash your imagination </strong>
-                                {" "} and define your own style
+                            Crie sua camisa única e exclusiva com a nossa nova ferramenta de personalização.
+                                <strong> Dê asas à sua imaginação </strong>
+                                {" "} e defina seu próprio estilo
                             </p>
 
                             <CustomButton
                                 type='filled'
-                                title='Customize it'
+                                title='Customize'
                                 handleClick={()=>{state.intro = false}}
                                 customStyles='w-fit px-4 py-2.5 font-bold text-sm'
                             />
