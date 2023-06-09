@@ -53,6 +53,8 @@ const Customizer = () => {
         try {
             setGeneratingImg(true);
 
+            //https://tshirt-customization.onrender.com
+
             const response = await fetch('https://tshirt-customization.onrender.com/api/v1/dalle', {
                 method: 'POST',
                 headers: {
