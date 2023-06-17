@@ -22,6 +22,7 @@ const Customizer = () => {
     const [activeFilterTab, setActiveFilterTab] = useState({
         logoShirt: true,
         stylishShirt: false,
+        downloadShirt: false,
     })
 
     // show tab content depending on the activeTab
@@ -94,6 +95,14 @@ const Customizer = () => {
             case "stylishShirt":
                 state.isFullTexture = !activeFilterTab[tabName];
                 break;
+            case "downloadShirt":
+                downloadCanvasToImage();
+                setActiveFilterTab({
+                    logoShirt: true,
+                    stylishShirt: false,
+                    downloadShirt: true,
+                });
+                break;
             default:
                 state.isLogoTexture = true;
                 state.isFullTexture = false;
@@ -148,7 +157,7 @@ const Customizer = () => {
                     >
                         <CustomButton
                             type="filled"
-                            title="Go Back"
+                            title="Voltar"
                             handleClick={() => state.intro = true}
                             customStyles="w-fit px-4 py-2.5 font-bold text-sm"
                         />
